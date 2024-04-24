@@ -38,6 +38,7 @@ const Register: React.FC<Props> = ({ setSelected }) => {
   const onSubmit = async (data: Register) => {
     try {
       await register(data).unwrap()
+      setSelected("login")
     } catch (error) {
       if (hasErrorField(error)) {
         setError(error.data.error)

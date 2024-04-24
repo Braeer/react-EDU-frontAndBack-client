@@ -31,13 +31,13 @@ export const userApi = api.injectEndpoints({
     }),
     getUserById: builder.query<User, string>({
       query: id => ({
-        url: `/user/${id}`,
+        url: `/users/${id}`,
         method: "GET",
       }),
     }),
     updateUser: builder.mutation<User, { userData: FormData; id: string }>({
       query: ({ userData, id }) => ({
-        url: `/user/${id}`,
+        url: `/users/${id}`,
         method: "PUT",
         body: userData,
       }),
